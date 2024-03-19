@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
-    --verticle-space: 2rem;
+    --verticle-space: 1.5rem;
     --horizontal-space: 2rem;
-    --light-color: #63fac8;
-    --body-color: #3b3a35;
-    --heading-color:#97792f;
+    --light-color: #92ffdb;
+    --body-color: #3b3535;
+    --heading-color:#6f5a23;
     --contrast-color: #DC4DFA;
 }
 
@@ -41,7 +41,24 @@ a:hover {
     color: var(--contrast-color);
 }
 
-body#about img { height: 15em; }
+body#about img { 
+    height: 15em; 
+    
+    margin-right: var(--horizontal-space);
+    margin-bottom: var(--verticle-space);
+
+}
+@media screen and (min-width: 25em) {
+    body#about img {
+        display: inline;
+        float: left;
+    }
+
+}
+
+body#portfolio img {
+    max-height: 20em;
+}
 
 p {
     max-width: 50em;
@@ -68,10 +85,26 @@ body{
 
 body > header {
     grid-area: head;
+
 }
 
 body > nav {
     grid-area: nav;
+    padding-top: 2em;
+
+}
+
+body > main > *:first-child::before {
+    content: "";
+    border-top: 3px solid var(--contrast-color);
+    display: block;
+    padding-top: var(--verticle-space);
+}
+body > main > *:last-child::after {
+    content: "";
+    border-top: 3px solid var(--contrast-color);
+    display: block;
+    margin-top: var(--verticle-space);
 }
 
 body > nav ul {
